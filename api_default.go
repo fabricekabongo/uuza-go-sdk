@@ -262,7 +262,7 @@ Retrieves details of a single product or variant product.
  @param productId
  @return ApiApiProductProductIdGetRequest
 */
-func (a *DefaultApiService) ApiProductProductIdGet(ctx context.Context, productId string) ApiApiProductProductIdGetRequest {
+func (a *DefaultApiService) ApiProductProductIdGet(ctx context.Context, productId uint64) ApiApiProductProductIdGetRequest {
 	return ApiApiProductProductIdGetRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -497,7 +497,7 @@ Updates an existing simple product.
  @param productId
  @return ApiApiUpdateSimpleProductProductIdPostRequest
 */
-func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPost(ctx context.Context, productId string) ApiApiUpdateSimpleProductProductIdPostRequest {
+func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPost(ctx context.Context, productId uint64) ApiApiUpdateSimpleProductProductIdPostRequest {
 	return ApiApiUpdateSimpleProductProductIdPostRequest{
 		ApiService: a,
 		ctx: ctx,

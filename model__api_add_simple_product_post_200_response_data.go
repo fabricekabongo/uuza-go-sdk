@@ -40,9 +40,9 @@ func NewApiAddSimpleProductPost200ResponseDataWithDefaults() *ApiAddSimpleProduc
 }
 
 // GetProductId returns the ProductId field value if set, zero value otherwise.
-func (o *ApiAddSimpleProductPost200ResponseData) GetProductId() string {
+func (o *ApiAddSimpleProductPost200ResponseData) GetProductId() uint64 {
 	if o == nil || IsNil(o.ProductId) {
-		var ret string
+		var ret uint64
 		return ret
 	}
 	return *o.ProductId
@@ -50,7 +50,7 @@ func (o *ApiAddSimpleProductPost200ResponseData) GetProductId() string {
 
 // GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiAddSimpleProductPost200ResponseData) GetProductIdOk() (*string, bool) {
+func (o *ApiAddSimpleProductPost200ResponseData) GetProductIdOk() (*uint64, bool) {
 	if o == nil || IsNil(o.ProductId) {
 		return nil, false
 	}
