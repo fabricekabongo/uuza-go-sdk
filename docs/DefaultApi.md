@@ -166,7 +166,7 @@ import (
 )
 
 func main() {
-    productId := "productId_example" // string | 
+    productId := 356 // uint64 | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -306,7 +306,7 @@ import (
 )
 
 func main() {
-    productId := "productId_example" // string | 
+    productId := 358 // uint64 | 
     simpleProduct := *openapiclient.NewSimpleProduct() // SimpleProduct | 
 
     configuration := openapiclient.NewConfiguration()
@@ -376,7 +376,7 @@ import (
 )
 
 func main() {
-    productId := "productId_example" // string | 
+    productId :=  245// string | 
     variantProduct := *openapiclient.NewVariantProduct() // VariantProduct | 
 
     configuration := openapiclient.NewConfiguration()

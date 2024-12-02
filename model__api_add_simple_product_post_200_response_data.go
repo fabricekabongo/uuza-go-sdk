@@ -19,7 +19,7 @@ var _ MappedNullable = &ApiAddSimpleProductPost200ResponseData{}
 
 // ApiAddSimpleProductPost200ResponseData struct for ApiAddSimpleProductPost200ResponseData
 type ApiAddSimpleProductPost200ResponseData struct {
-	ProductId *string `json:"product_id,omitempty"`
+	ProductId *uint64 `json:"product_id,omitempty"`
 }
 
 // NewApiAddSimpleProductPost200ResponseData instantiates a new ApiAddSimpleProductPost200ResponseData object
@@ -67,7 +67,7 @@ func (o *ApiAddSimpleProductPost200ResponseData) HasProductId() bool {
 }
 
 // SetProductId gets a reference to the given string and assigns it to the ProductId field.
-func (o *ApiAddSimpleProductPost200ResponseData) SetProductId(v string) {
+func (o *ApiAddSimpleProductPost200ResponseData) SetProductId(v uint64) {
 	o.ProductId = &v
 }
 

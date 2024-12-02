@@ -246,7 +246,7 @@ func (a *DefaultApiService) ApiAddVariantProductPostExecute(r ApiApiAddVariantPr
 type ApiApiProductProductIdGetRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
-	productId string
+	productId uint64
 }
 
 func (r ApiApiProductProductIdGetRequest) Execute() (*ApiProductProductIdGet200Response, *http.Response, error) {
@@ -475,7 +475,7 @@ func (a *DefaultApiService) ApiProductsGetExecute(r ApiApiProductsGetRequest) (*
 type ApiApiUpdateSimpleProductProductIdPostRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
-	productId string
+	productId uint64
 	simpleProduct *SimpleProduct
 }
 
@@ -578,7 +578,7 @@ func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPostExecute(r ApiApiU
 type ApiApiUpdateVariantProductProductIdPostRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
-	productId string
+	productId uint64
 	variantProduct *VariantProduct
 }
 
@@ -600,7 +600,7 @@ Updates an existing product with variants.
  @param productId
  @return ApiApiUpdateVariantProductProductIdPostRequest
 */
-func (a *DefaultApiService) ApiUpdateVariantProductProductIdPost(ctx context.Context, productId string) ApiApiUpdateVariantProductProductIdPostRequest {
+func (a *DefaultApiService) ApiUpdateVariantProductProductIdPost(ctx context.Context, productId uint64) ApiApiUpdateVariantProductProductIdPostRequest {
 	return ApiApiUpdateVariantProductProductIdPostRequest{
 		ApiService: a,
 		ctx: ctx,

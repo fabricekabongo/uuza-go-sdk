@@ -359,7 +359,7 @@ func (o SimpleProduct) ToMap() (map[string]interface{}, error) {
 		toSerialize["category_id"] = o.CategoryId
 	}
 	if !IsNil(o.PostedDate) {
-		toSerialize["posted_date"] = o.PostedDate
+		toSerialize["posted_date"] = o.PostedDate.Format("01-02-2006 15:04")
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

@@ -50,7 +50,7 @@ func Test_openapi_DefaultApiService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var productId string
+		var productId uint64
 
 		resp, httpRes, err := apiClient.DefaultApi.ApiProductProductIdGet(context.Background(), productId).Execute()
 
@@ -76,7 +76,7 @@ func Test_openapi_DefaultApiService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var productId string
+		var productId uint64
 
 		httpRes, err := apiClient.DefaultApi.ApiUpdateSimpleProductProductIdPost(context.Background(), productId).Execute()
 
@@ -89,7 +89,7 @@ func Test_openapi_DefaultApiService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var productId string
+		var productId uint64
 
 		httpRes, err := apiClient.DefaultApi.ApiUpdateVariantProductProductIdPost(context.Background(), productId).Execute()
 
