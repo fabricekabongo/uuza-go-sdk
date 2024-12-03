@@ -78,7 +78,7 @@ func Test_openapi_DefaultApiService(t *testing.T) {
 
 		var productId uint64
 
-		httpRes, err := apiClient.DefaultApi.ApiUpdateSimpleProductProductIdPost(context.Background(), productId).Execute()
+		httpRes, err := apiClient.DefaultApi.ApiUpdateSingleProductProductIdPost(context.Background(), productId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

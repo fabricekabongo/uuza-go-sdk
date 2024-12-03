@@ -15,41 +15,45 @@ import (
 	"time"
 )
 
-// checks if the SimpleProduct type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SimpleProduct{}
+// checks if the SingleUpdateProduct type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SingleUpdateProduct{}
 
-// SimpleProduct struct for SimpleProduct
-type SimpleProduct struct {
+
+type UpdateImage struct {
+	Id int32 `json:"id"`
+	Image string `json:"url"`
+}
+type SingleUpdateProduct struct {
 	Name *string `json:"name,omitempty"`
 	Price *float32 `json:"price,omitempty"`
 	Quantity *int32 `json:"quantity,omitempty"`
 	CategoryId *int32 `json:"category_id,omitempty"`
 	PostedDate *time.Time `json:"posted_date,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Images []string `json:"images,omitempty"`
+	Images []UpdateImage `json:"images,omitempty"`
 	FeatureImage *string `json:"feature_image,omitempty"`
 	Tag *string `json:"tag,omitempty"`
 }
 
-// NewSimpleProduct instantiates a new SimpleProduct object
+// NewSingleUpdateProduct instantiates a new SingleUpdateProduct object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimpleProduct() *SimpleProduct {
-	this := SimpleProduct{}
+func NewSingleUpdateProduct() *SingleUpdateProduct {
+	this := SingleUpdateProduct{}
 	return &this
 }
 
-// NewSimpleProductWithDefaults instantiates a new SimpleProduct object
+// NewSingleUpdateProductWithDefaults instantiates a new SingleUpdateProduct object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSimpleProductWithDefaults() *SimpleProduct {
-	this := SimpleProduct{}
+func NewSingleUpdateProductWithDefaults() *SingleUpdateProduct {
+	this := SingleUpdateProduct{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *SimpleProduct) GetName() string {
+func (o *SingleUpdateProduct) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -59,7 +63,7 @@ func (o *SimpleProduct) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetNameOk() (*string, bool) {
+func (o *SingleUpdateProduct) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -67,7 +71,7 @@ func (o *SimpleProduct) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *SimpleProduct) HasName() bool {
+func (o *SingleUpdateProduct) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -76,12 +80,12 @@ func (o *SimpleProduct) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SimpleProduct) SetName(v string) {
+func (o *SingleUpdateProduct) SetName(v string) {
 	o.Name = &v
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise.
-func (o *SimpleProduct) GetPrice() float32 {
+func (o *SingleUpdateProduct) GetPrice() float32 {
 	if o == nil || IsNil(o.Price) {
 		var ret float32
 		return ret
@@ -91,7 +95,7 @@ func (o *SimpleProduct) GetPrice() float32 {
 
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetPriceOk() (*float32, bool) {
+func (o *SingleUpdateProduct) GetPriceOk() (*float32, bool) {
 	if o == nil || IsNil(o.Price) {
 		return nil, false
 	}
@@ -99,7 +103,7 @@ func (o *SimpleProduct) GetPriceOk() (*float32, bool) {
 }
 
 // HasPrice returns a boolean if a field has been set.
-func (o *SimpleProduct) HasPrice() bool {
+func (o *SingleUpdateProduct) HasPrice() bool {
 	if o != nil && !IsNil(o.Price) {
 		return true
 	}
@@ -108,12 +112,12 @@ func (o *SimpleProduct) HasPrice() bool {
 }
 
 // SetPrice gets a reference to the given float32 and assigns it to the Price field.
-func (o *SimpleProduct) SetPrice(v float32) {
+func (o *SingleUpdateProduct) SetPrice(v float32) {
 	o.Price = &v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *SimpleProduct) GetQuantity() int32 {
+func (o *SingleUpdateProduct) GetQuantity() int32 {
 	if o == nil || IsNil(o.Quantity) {
 		var ret int32
 		return ret
@@ -123,7 +127,7 @@ func (o *SimpleProduct) GetQuantity() int32 {
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetQuantityOk() (*int32, bool) {
+func (o *SingleUpdateProduct) GetQuantityOk() (*int32, bool) {
 	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
@@ -131,7 +135,7 @@ func (o *SimpleProduct) GetQuantityOk() (*int32, bool) {
 }
 
 // HasQuantity returns a boolean if a field has been set.
-func (o *SimpleProduct) HasQuantity() bool {
+func (o *SingleUpdateProduct) HasQuantity() bool {
 	if o != nil && !IsNil(o.Quantity) {
 		return true
 	}
@@ -140,12 +144,12 @@ func (o *SimpleProduct) HasQuantity() bool {
 }
 
 // SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
-func (o *SimpleProduct) SetQuantity(v int32) {
+func (o *SingleUpdateProduct) SetQuantity(v int32) {
 	o.Quantity = &v
 }
 
 // GetCategoryId returns the CategoryId field value if set, zero value otherwise.
-func (o *SimpleProduct) GetCategoryId() int32 {
+func (o *SingleUpdateProduct) GetCategoryId() int32 {
 	if o == nil || IsNil(o.CategoryId) {
 		var ret int32
 		return ret
@@ -155,7 +159,7 @@ func (o *SimpleProduct) GetCategoryId() int32 {
 
 // GetCategoryIdOk returns a tuple with the CategoryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetCategoryIdOk() (*int32, bool) {
+func (o *SingleUpdateProduct) GetCategoryIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.CategoryId) {
 		return nil, false
 	}
@@ -163,7 +167,7 @@ func (o *SimpleProduct) GetCategoryIdOk() (*int32, bool) {
 }
 
 // HasCategoryId returns a boolean if a field has been set.
-func (o *SimpleProduct) HasCategoryId() bool {
+func (o *SingleUpdateProduct) HasCategoryId() bool {
 	if o != nil && !IsNil(o.CategoryId) {
 		return true
 	}
@@ -172,12 +176,12 @@ func (o *SimpleProduct) HasCategoryId() bool {
 }
 
 // SetCategoryId gets a reference to the given int32 and assigns it to the CategoryId field.
-func (o *SimpleProduct) SetCategoryId(v int32) {
+func (o *SingleUpdateProduct) SetCategoryId(v int32) {
 	o.CategoryId = &v
 }
 
 // GetPostedDate returns the PostedDate field value if set, zero value otherwise.
-func (o *SimpleProduct) GetPostedDate() time.Time {
+func (o *SingleUpdateProduct) GetPostedDate() time.Time {
 	if o == nil || IsNil(o.PostedDate) {
 		var ret time.Time
 		return ret
@@ -187,7 +191,7 @@ func (o *SimpleProduct) GetPostedDate() time.Time {
 
 // GetPostedDateOk returns a tuple with the PostedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetPostedDateOk() (*time.Time, bool) {
+func (o *SingleUpdateProduct) GetPostedDateOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.PostedDate) {
 		return nil, false
 	}
@@ -195,7 +199,7 @@ func (o *SimpleProduct) GetPostedDateOk() (*time.Time, bool) {
 }
 
 // HasPostedDate returns a boolean if a field has been set.
-func (o *SimpleProduct) HasPostedDate() bool {
+func (o *SingleUpdateProduct) HasPostedDate() bool {
 	if o != nil && !IsNil(o.PostedDate) {
 		return true
 	}
@@ -204,12 +208,12 @@ func (o *SimpleProduct) HasPostedDate() bool {
 }
 
 // SetPostedDate gets a reference to the given time.Time and assigns it to the PostedDate field.
-func (o *SimpleProduct) SetPostedDate(v time.Time) {
+func (o *SingleUpdateProduct) SetPostedDate(v time.Time) {
 	o.PostedDate = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *SimpleProduct) GetDescription() string {
+func (o *SingleUpdateProduct) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
@@ -219,7 +223,7 @@ func (o *SimpleProduct) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetDescriptionOk() (*string, bool) {
+func (o *SingleUpdateProduct) GetDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
@@ -227,7 +231,7 @@ func (o *SimpleProduct) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *SimpleProduct) HasDescription() bool {
+func (o *SingleUpdateProduct) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -236,14 +240,14 @@ func (o *SimpleProduct) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *SimpleProduct) SetDescription(v string) {
+func (o *SingleUpdateProduct) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetImages returns the Images field value if set, zero value otherwise.
-func (o *SimpleProduct) GetImages() []string {
+func (o *SingleUpdateProduct) GetImages() []UpdateImage {
 	if o == nil || IsNil(o.Images) {
-		var ret []string
+		var ret []UpdateImage
 		return ret
 	}
 	return o.Images
@@ -251,7 +255,7 @@ func (o *SimpleProduct) GetImages() []string {
 
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetImagesOk() ([]string, bool) {
+func (o *SingleUpdateProduct) GetImagesOk() ([]UpdateImage, bool) {
 	if o == nil || IsNil(o.Images) {
 		return nil, false
 	}
@@ -259,7 +263,7 @@ func (o *SimpleProduct) GetImagesOk() ([]string, bool) {
 }
 
 // HasImages returns a boolean if a field has been set.
-func (o *SimpleProduct) HasImages() bool {
+func (o *SingleUpdateProduct) HasImages() bool {
 	if o != nil && !IsNil(o.Images) {
 		return true
 	}
@@ -268,12 +272,12 @@ func (o *SimpleProduct) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []string and assigns it to the Images field.
-func (o *SimpleProduct) SetImages(v []string) {
+func (o *SingleUpdateProduct) SetImages(v []UpdateImage) {
 	o.Images = v
 }
 
 // GetFeatureImage returns the FeatureImage field value if set, zero value otherwise.
-func (o *SimpleProduct) GetFeatureImage() string {
+func (o *SingleUpdateProduct) GetFeatureImage() string {
 	if o == nil || IsNil(o.FeatureImage) {
 		var ret string
 		return ret
@@ -283,7 +287,7 @@ func (o *SimpleProduct) GetFeatureImage() string {
 
 // GetFeatureImageOk returns a tuple with the FeatureImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetFeatureImageOk() (*string, bool) {
+func (o *SingleUpdateProduct) GetFeatureImageOk() (*string, bool) {
 	if o == nil || IsNil(o.FeatureImage) {
 		return nil, false
 	}
@@ -291,7 +295,7 @@ func (o *SimpleProduct) GetFeatureImageOk() (*string, bool) {
 }
 
 // HasFeatureImage returns a boolean if a field has been set.
-func (o *SimpleProduct) HasFeatureImage() bool {
+func (o *SingleUpdateProduct) HasFeatureImage() bool {
 	if o != nil && !IsNil(o.FeatureImage) {
 		return true
 	}
@@ -300,12 +304,12 @@ func (o *SimpleProduct) HasFeatureImage() bool {
 }
 
 // SetFeatureImage gets a reference to the given string and assigns it to the FeatureImage field.
-func (o *SimpleProduct) SetFeatureImage(v string) {
+func (o *SingleUpdateProduct) SetFeatureImage(v string) {
 	o.FeatureImage = &v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
-func (o *SimpleProduct) GetTag() string {
+func (o *SingleUpdateProduct) GetTag() string {
 	if o == nil || IsNil(o.Tag) {
 		var ret string
 		return ret
@@ -315,7 +319,7 @@ func (o *SimpleProduct) GetTag() string {
 
 // GetTagOk returns a tuple with the Tag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleProduct) GetTagOk() (*string, bool) {
+func (o *SingleUpdateProduct) GetTagOk() (*string, bool) {
 	if o == nil || IsNil(o.Tag) {
 		return nil, false
 	}
@@ -323,7 +327,7 @@ func (o *SimpleProduct) GetTagOk() (*string, bool) {
 }
 
 // HasTag returns a boolean if a field has been set.
-func (o *SimpleProduct) HasTag() bool {
+func (o *SingleUpdateProduct) HasTag() bool {
 	if o != nil && !IsNil(o.Tag) {
 		return true
 	}
@@ -332,11 +336,11 @@ func (o *SimpleProduct) HasTag() bool {
 }
 
 // SetTag gets a reference to the given string and assigns it to the Tag field.
-func (o *SimpleProduct) SetTag(v string) {
+func (o *SingleUpdateProduct) SetTag(v string) {
 	o.Tag = &v
 }
 
-func (o SimpleProduct) MarshalJSON() ([]byte, error) {
+func (o SingleUpdateProduct) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -344,7 +348,7 @@ func (o SimpleProduct) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o SimpleProduct) ToMap() (map[string]interface{}, error) {
+func (o SingleUpdateProduct) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -376,38 +380,38 @@ func (o SimpleProduct) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableSimpleProduct struct {
-	value *SimpleProduct
+type NullableSingleUpdateProduct struct {
+	value *SingleUpdateProduct
 	isSet bool
 }
 
-func (v NullableSimpleProduct) Get() *SimpleProduct {
+func (v NullableSingleUpdateProduct) Get() *SingleUpdateProduct {
 	return v.value
 }
 
-func (v *NullableSimpleProduct) Set(val *SimpleProduct) {
+func (v *NullableSingleUpdateProduct) Set(val *SingleUpdateProduct) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableSimpleProduct) IsSet() bool {
+func (v NullableSingleUpdateProduct) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableSimpleProduct) Unset() {
+func (v *NullableSingleUpdateProduct) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableSimpleProduct(val *SimpleProduct) *NullableSimpleProduct {
-	return &NullableSimpleProduct{value: val, isSet: true}
+func NewNullableSingleUpdateProduct(val *SingleUpdateProduct) *NullableSingleUpdateProduct {
+	return &NullableSingleUpdateProduct{value: val, isSet: true}
 }
 
-func (v NullableSimpleProduct) MarshalJSON() ([]byte, error) {
+func (v NullableSingleUpdateProduct) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableSimpleProduct) UnmarshalJSON(src []byte) error {
+func (v *NullableSingleUpdateProduct) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
