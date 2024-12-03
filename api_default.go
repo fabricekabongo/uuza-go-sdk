@@ -518,7 +518,7 @@ func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPostExecute(r ApiApiU
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/update-simple-product/{product_id}"
+	localVarPath := localBasePath + "/api/update-single-product/{product_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"product_id"+"}", url.PathEscape(parameterValueToString(r.productId, "productId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
