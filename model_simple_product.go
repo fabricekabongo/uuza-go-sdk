@@ -31,6 +31,22 @@ type SimpleProduct struct {
 	Tag *string `json:"tag,omitempty"`
 }
 
+type UpdateImage struct {
+	Id int32 `json:"id"`
+	Image string `json:"url"`
+}
+type SingleUpdateProduct struct {
+	Name *string `json:"name,omitempty"`
+	Price *float32 `json:"price,omitempty"`
+	Quantity *int32 `json:"quantity,omitempty"`
+	CategoryId *int32 `json:"category_id,omitempty"`
+	PostedDate *time.Time `json:"posted_date,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Images []UpdateImage `json:"images,omitempty"`
+	FeatureImage *string `json:"feature_image,omitempty"`
+	Tag *string `json:"tag,omitempty"`
+}
+
 // NewSimpleProduct instantiates a new SimpleProduct object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments

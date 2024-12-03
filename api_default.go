@@ -472,33 +472,33 @@ func (a *DefaultApiService) ApiProductsGetExecute(r ApiApiProductsGetRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiUpdateSimpleProductProductIdPostRequest struct {
+type ApiApiUpdateSingleProductProductIdPostRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
-	productId uint64
-	simpleProduct *SimpleProduct
+	productId           uint64
+	singleUpdateProduct *SingleUpdateProduct
 }
 
-func (r ApiApiUpdateSimpleProductProductIdPostRequest) SimpleProduct(simpleProduct SimpleProduct) ApiApiUpdateSimpleProductProductIdPostRequest {
-	r.simpleProduct = &simpleProduct
+func (r ApiApiUpdateSingleProductProductIdPostRequest) SingleProduct(singleUpdateProduct SingleUpdateProduct) ApiApiUpdateSingleProductProductIdPostRequest {
+	r.singleUpdateProduct = &singleUpdateProduct
 	return r
 }
 
-func (r ApiApiUpdateSimpleProductProductIdPostRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ApiUpdateSimpleProductProductIdPostExecute(r)
+func (r ApiApiUpdateSingleProductProductIdPostRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ApiUpdateSingleProductProductIdPostExecute(r)
 }
 
 /*
-ApiUpdateSimpleProductProductIdPost Update a simple product
+ApiUpdateSingleProductProductIdPost Update a simple product
 
 Updates an existing simple product.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productId
- @return ApiApiUpdateSimpleProductProductIdPostRequest
+ @return ApiApiUpdateSingleProductProductIdPostRequest
 */
-func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPost(ctx context.Context, productId uint64) ApiApiUpdateSimpleProductProductIdPostRequest {
-	return ApiApiUpdateSimpleProductProductIdPostRequest{
+func (a *DefaultApiService) ApiUpdateSingleProductProductIdPost(ctx context.Context, productId uint64) ApiApiUpdateSingleProductProductIdPostRequest {
+	return ApiApiUpdateSingleProductProductIdPostRequest{
 		ApiService: a,
 		ctx: ctx,
 		productId: productId,
@@ -506,14 +506,14 @@ func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPost(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPostExecute(r ApiApiUpdateSimpleProductProductIdPostRequest) (*http.Response, error) {
+func (a *DefaultApiService) ApiUpdateSingleProductProductIdPostExecute(r ApiApiUpdateSingleProductProductIdPostRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApiUpdateSimpleProductProductIdPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.ApiUpdateSingleProductProductIdPost")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -524,8 +524,8 @@ func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPostExecute(r ApiApiU
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.simpleProduct == nil {
-		return nil, reportError("simpleProduct is required and must be specified")
+	if r.singleUpdateProduct == nil {
+		return nil, reportError("singleUpdateProduct is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -546,7 +546,7 @@ func (a *DefaultApiService) ApiUpdateSimpleProductProductIdPostExecute(r ApiApiU
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.simpleProduct
+	localVarPostBody = r.singleUpdateProduct
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
